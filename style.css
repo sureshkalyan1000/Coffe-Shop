@@ -51,6 +51,11 @@ header{
     transform: scaleX(1);
 }
 
+.bx-menu{
+    color: white;
+    font-size: 25px;
+}
+
 .home{
     background: url('Images/new.png') no-repeat;
     width: 100%;
@@ -61,7 +66,12 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 80px 100px 0;
+}
+
+#menu-icon {
+    display: none;
 }
 
 .home .content{
@@ -197,4 +207,52 @@ header{
 
 .register-link a:hover{
     text-decoration: underline;    
+}
+
+@media (max-width: 700px) {
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    header{
+        padding: 10px 40px;
+    }
+
+    .home{
+        padding: 20px 30px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .home{
+        background: url('Images/new.png') repeat-y !important;
+        height: 200vh;
+    }
+    html{
+        font-size: 75%;
+        padding: 5px 10px 0;
+    }
 }
